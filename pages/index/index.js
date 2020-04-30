@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
+    motto: 'go to next',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
@@ -15,6 +15,12 @@ Page({
       url: '../logs/logs'
     })
   },
+  goToNext: function() {
+    wx.navigateTo({
+      url: '../me/me'
+    })
+  },
+  
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({

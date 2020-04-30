@@ -9,6 +9,7 @@ App({
     // 登录
     wx.login({
       success: res => {
+        this.globalData.code = res.code
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
@@ -21,19 +22,42 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
+              var app = this
+              
+              //请求后台获取openid，openid放在username里
+              wx.request({
+                url: app.globalData.host+'/user/loginWeChat',
+                method: "POST",
+                data: {
+                  nickname: this.globalData.userInfo.nickName,
+                  headshot: this.globalData.userInfo.avatarUrl,
+                  gender: this.globalData.userInfo.gender,
+                  code: this.globalData.code
+                },
+                header: {
+                  'content-type': 'application/json'
+                },
+                success: function(res) {
+                  console.log("app-user info")
+                  console.log(res.data)
 
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
+                  if (app.userInfoReadyCallback) {
+                    app.userInfoReadyCallback(app.globalData)
+                  }
+                },
+                fail: function(res) {
+                  console.log(res.data)
+                }
+              })
             }
+            
           })
         }
       }
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    host: 'https://www.gravity.red'
   }
 })

@@ -1,0 +1,16 @@
+<!--pages/me/me.wxml-->
+
+<van-row>
+	<van-col span="4" offset="2">
+		<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+	</van-col>
+	<van-col span="10" offset="4">
+			<van-row><text class="hidden">	_	</text></van-row>
+		<van-row>
+				<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+		</van-row>
+    <van-row>
+				<text class="userinfo-description">自我介绍!!!!!!!!!!!!!</text>
+		</van-row>
+	</van-col>
+</van-row>
