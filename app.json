@@ -1,11 +1,11 @@
 {
   "pages": [    
-    "pages/me/editor/editor",
-    "pages/me/edit/edit",
+
     "pages/index/index",
     "pages/logs/logs",
     "pages/me/me",
-    "pages/post/postList"
+    "pages/post/postList",
+    "pages/me/editor/editor"
   ],
   "window": {
     "backgroundTextStyle": "light",
