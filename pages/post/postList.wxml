@@ -1,9 +1,9 @@
 <!--pages/post/postList.wxml-->
 <view class='background'>
 	<view class='giftListView'>
-		<block wx:for="{{items}}">
+		<block wx:for="{{items}}" wx:key="postID" >
 			<!-- 每个cell -->
-			<view class='item' wx:key="{{item.ID}}" data-item="{{item}}" data-id="{{item.postID}}">
+			<view class='item' data-item="{{item}}" data-id="{{item.postID}}">
 				<van-panel use-footer-slot>
 					<view slot="header">
 						<van-row>

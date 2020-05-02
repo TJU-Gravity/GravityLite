@@ -36,6 +36,11 @@ Page({
       url: '../post/detail/postDetail'
     })
   },
+  goToPostEditor: function() {
+    wx.navigateTo({
+      url: '../post/editor/editor'
+    })
+  },
   
   onLoad: function () {
     if (app.globalData.userInfo) {
