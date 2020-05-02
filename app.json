@@ -1,7 +1,7 @@
 {
-  "pages": [    
-
+  "pages": [
     "pages/index/index",
+    "pages/post/detail/postDetail",
     "pages/logs/logs",
     "pages/me/me",
     "pages/post/postList",
@@ -24,6 +24,7 @@
     "van-icon": "./vant-weapp/dist/icon/index",
     "van-field": "./vant-weapp/dist/field/index",
     "van-button": "./vant-weapp/dist/button/index",
-    "van-panel": "./vant-weapp/dist/panel/index"
+    "van-panel": "./vant-weapp/dist/panel/index",
+    "van-divider": "./vant-weapp/dist/divider/index"
   }
 }

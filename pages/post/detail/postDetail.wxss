@@ -1,0 +1,27 @@
+/* pages/post/detail/postDetail.wxss */
+.userinfo-avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.userinfo-nickname {
+  margin-left: 10rpx;
+
+}
+.userinfo-description {
+  color: #aaa;
+  font-size: small;
+}
+.post-title {
+ 
+  font-size: large;
+  padding-left: 4%;
+  
+}
+.post-detail 
+{  
+  word-break:break-all;
+}
+.reply{
+  font-size: smaller;
+}

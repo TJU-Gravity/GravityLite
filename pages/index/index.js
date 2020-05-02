@@ -31,6 +31,12 @@ Page({
     })
   },
   
+  goToPostDetail: function() {
+    wx.navigateTo({
+      url: '../post/detail/postDetail'
+    })
+  },
+  
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
@@ -61,10 +67,8 @@ Page({
   },
   getUserInfo: function(e) {
     console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+    app.globalData.tempUserInfo = e.detail.userInfo
+    app.login();
+
   }
 })

@@ -1,0 +1,69 @@
+<!--pages/post/detail/postDetail.wxml-->
+<view class='background'>
+	<van-panel use-footer-slot>
+		<view slot="header" style="padding-top:15rpx">
+			<text class="post-title">帖子标题</text>
+			<van-divider />
+		</view>
+
+		<view>
+			<van-row>
+				<van-col span="2" offset="1">
+					<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.headshot}}" mode="cover"></image>
+				</van-col>
+				<van-col span="21">
+					<text class="userinfo-nickname">{{userInfo.nickname}}</text>
+					<van-row>
+
+						<text class="userinfo-description" style="margin-left:10rpx">2020/4/24</text>
+
+					</van-row>
+				</van-col>
+
+
+
+				<van-col span="20" offset="3">
+					<text class='post-detail'>帖子内容测试 帖子内容测试 帖子内容测试 帖子内容测试 帖子内容测试 帖子内容测试  帖子内容测试 帖子内容测试 帖子内容测试 帖子内容测试</text>
+				</van-col>
+			</van-row>
+		</view>
+		<view slot="footer">
+			<div style="margin-right:10rpx">
+				<van-tag round plain type="success">#标签</van-tag>
+			</div>
+			<div style="margin-right:10rpx">
+				<van-tag round plain type="success">#标签</van-tag>
+			</div>
+			<div style="margin-right:10rpx">
+				<van-tag round plain type="success">#标签</van-tag>
+			</div>
+		</view>
+	</van-panel>
+	<view style="padding:5rpx"></view>
+	<van-panel>
+
+		<view style="padding-top:25rpx;padding-bottom:20rpx">
+			<van-row>
+				<van-col span="2" offset="1">
+					<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.headshot}}" mode="cover"></image>
+				</van-col>
+				<van-col span="21">
+					<text class="userinfo-nickname">{{userInfo.nickname}}</text>
+					<van-row>
+
+						<text class="userinfo-description" style="margin-left:10rpx">2020/4/24</text>
+
+					</van-row>
+				</van-col>
+
+
+
+				<van-col span="20" offset="3">
+					<text class='reply'>回复 回复 回复 回复</text>
+				</van-col>
+			</van-row>
+		</view>
+
+	</van-panel>
+
+</view>
