@@ -1,0 +1,57 @@
+<!--pages/post/postList.wxml-->
+<view class='background'>
+	<view class='giftListView'>
+		<block wx:for="{{items}}">
+			<!-- 每个cell -->
+			<view class='item' wx:key="{{item.ID}}" data-item="{{item}}" data-id="{{item.postID}}">
+				<van-panel use-footer-slot>
+					<view slot="header">
+						<van-row>
+							<van-col span="17" offset="1">
+								<view style="padding:10rpx" />
+								<text class="post-title">帖子标题</text>
+								<view style="padding:5rpx" />
+							</van-col>
+							<van-col span="4" offset="1">
+								<text class="userinfo-description">回复：1024</text>
+							</van-col>
+						</van-row>
+
+					</view>
+					<view>
+						<van-row>
+							<van-col span="2" offset="1">
+								<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.headshot}}" mode="cover"></image>
+							</van-col>
+							<van-col span="21">
+
+								<text class="userinfo-nickname">{{userInfo.nickname}}</text>
+
+
+								<text class="userinfo-description">2020/4/24</text>
+
+							</van-col>
+						</van-row>
+						<van-row>
+							<van-col span="21" offset="2">
+								<text class='post-detail'>帖子内容测试 帖子内容测试 帖子内容测试 帖子内容测试 帖子内容测试 帖子内容测试  帖子内容测试 帖子内容测试 帖子内容测试 帖子内容测试</text>
+							</van-col>
+						</van-row>
+					</view>
+					<view slot="footer">
+						<div style="margin-right:10rpx">
+							<van-tag round plain type="success">#标签</van-tag>
+						</div>
+						<div style="margin-right:10rpx">
+							<van-tag round plain type="success">#标签</van-tag>
+						</div>
+						<div style="margin-right:10rpx">
+							<van-tag round plain type="success">#标签</van-tag>
+						</div>
+					</view>
+				</van-panel>
+				<view style="padding:10rpx"></view>
+			</view>
+		</block>
+	</view>
+</view>

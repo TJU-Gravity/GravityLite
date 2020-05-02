@@ -4,7 +4,7 @@
 .userinfo-avatar {
   width: 156rpx;
   height: 156rpx;
-  margin: 20rpx;
+  margin: 10rpx;
   border-radius: 50%;
 }
 .userinfo-description {
@@ -13,4 +13,26 @@
 }
 .hidden {
   color: #fff;
+}
+.tab-box{
+  margin-left:50rpx;
+  margin-right: 50rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.tab{
+  padding:5rpx;
+  display:inline;
+}
+.card-box{
+margin-bottom: 20rpx;
+width: 100%;
+background-color: #fff;
+box-shadow: 0rpx 0rpx 3rpx 1rpx rgb(230, 230, 230)
+}
+.background{
+  background-color: #eee;
+  height:100%;
+  width:100%;
+  position:fixed;
 }

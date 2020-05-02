@@ -15,9 +15,19 @@ Page({
       url: '../logs/logs'
     })
   },
-  goToNext: function() {
+  goToMe: function() {
     wx.navigateTo({
       url: '../me/me'
+    })
+  },
+  goToEditor: function() {
+    wx.navigateTo({
+      url: '../me/editor/editor'
+    })
+  },
+  goToPostList: function() {
+    wx.navigateTo({
+      url: '../post/postList'
     })
   },
   

@@ -40,7 +40,7 @@ App({
                 success: function(res) {
                   console.log("app-user info")
                   console.log(res.data)
-
+                  app.globalData.userInfo=res.data.data
                   if (app.userInfoReadyCallback) {
                     app.userInfoReadyCallback(app.globalData)
                   }

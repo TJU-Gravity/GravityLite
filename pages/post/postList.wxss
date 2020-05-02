@@ -1,0 +1,22 @@
+/* pages/post/postList.wxss */
+.userinfo-avatar {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 5rpx;
+  border-radius: 50%;
+}
+.userinfo-nickname {
+  font-size: small;
+  margin-right: 10rpx;
+}
+.userinfo-description {
+  color: #aaa;
+  font-size: small;
+}
+.post-title {
+  font-size: large;
+}
+.post-detail 
+{  
+  word-break:break-all;
+}

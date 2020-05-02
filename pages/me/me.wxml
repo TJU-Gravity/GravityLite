@@ -1,16 +1,80 @@
 <!--pages/me/me.wxml-->
-
-<van-row>
-	<van-col span="4" offset="2">
-		<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-	</van-col>
-	<van-col span="10" offset="4">
-			<van-row><text class="hidden">	_	</text></van-row>
+<div class="background">
+	<view class="card-box">
 		<van-row>
-				<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+			<van-col span="4" offset="2">
+				<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.headshot}}" mode="cover"></image>
+			</van-col>
+			<van-col span="10" offset="4">
+				<van-row><text class="hidden">	_	</text></van-row>
+				<van-row>
+					<text class="userinfo-nickname">{{userInfo.nickname}}</text>
+				</van-row>
+				<van-row>
+					<text class="userinfo-description">{{userInfo.description}}</text>
+				</van-row>
+			</van-col>
 		</van-row>
+		<div class="tab-box">
+			<div class="tab">
+				<van-tag round plain type="success" size="large">标签</van-tag>
+			</div>
+			<div class="tab">
+				<van-tag round plain type="success" size="large">标签</van-tag>
+			</div>
+		</div>
     <van-row>
-				<text class="userinfo-description">自我介绍!!!!!!!!!!!!!</text>
+			<van-col span="22" offset="2">
+      <van-icon name="chat" style="margin:10rpx"/>
+				<text class="userinfo-description">school:{{userInfo.school}} major:{{userInfo.major}} grade:{{userInfo.grade}}</text>
+			</van-col>
+      	</van-row>
+		<van-row>
+			<van-col span="10" offset="2">
+      <van-icon name="chat" style="margin:10rpx"/>
+				<text class="userinfo-description">{{userInfo.wechat}}</text>
+			</van-col>
+			<van-col span="11" offset="1">
+        <van-icon name="chat" style="margin:10rpx"/>
+				<text class="userinfo-description">{{userInfo.qq}}</text>
+			</van-col>
 		</van-row>
-	</van-col>
-</van-row>
+		<van-row>
+			<van-col span="10" offset="2">
+        <van-icon name="chat" style="margin:10rpx"/>
+				<text class="userinfo-description">{{userInfo.phonenumber}}</text>
+			</van-col>
+			<van-col span="11" offset="1">
+        <van-icon name="chat" style="margin:10rpx"/>
+				<text class="userinfo-description">{{userInfo.email}}</text>
+			</van-col>
+		</van-row>
+		<view style="padding:20rpx"></view>
+	</view>
+
+	<view class="card-box">
+		<van-cell is-link>
+			<view slot="title">
+				<view class="van-cell-text">我的名片夹</view>
+			</view>
+		</van-cell>
+	</view>
+
+	<view class="card-box">
+		<van-cell is-link>
+			<view slot="title">
+				<view class="van-cell-text">我发表的帖子</view>
+			</view>
+		</van-cell>
+	</view>
+
+
+	<view class="card-box">
+		<van-cell is-link>
+			<view slot="title">
+				<view class="van-cell-text">关于引力</view>
+			</view>
+		</van-cell>
+	</view>
+
+</div>
