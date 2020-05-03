@@ -1,4 +1,4 @@
-// pages/post/detail/postDetail.js
+// pages/contacts/contacts.js
 const app = getApp()
 Page({
 
@@ -6,6 +6,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    indexList:[
+      '待处理',
+      '最近联系人',
+      '三个月前添加'
+    ]
 
   },
 
@@ -72,15 +77,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  clickReply: function(){
-    this.setData({
-      show:true
-    })
-  },
-  onClose: function(){
-    this.setData({
-      show:false
-    })
   }
 })

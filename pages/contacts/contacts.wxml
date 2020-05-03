@@ -1,0 +1,67 @@
+<!--pages/contacts/contacts.wxml-->
+<view class="background">
+	<scroll-view scroll-y="true" style="height:100%;width:100%">
+
+		<view>
+			<van-index-anchor index="待处理">未处理联系人</van-index-anchor>
+			<view style="background-color:#fff">
+				<view class="cell">
+					<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.headshot}}" mode="cover"></image>
+					<text class="userinfo-nickname">{{userInfo.nickname}}</text>
+          <view class = "button">
+          <van-button round custom-style="padding:0rpx;width:0" size="small" type="primary">接受</van-button>
+          </view>
+				</view>
+				<view style="width:90%;height:1px;background-color: #eee;margin-left:5%"></view>
+			</view>
+				<view style="background-color:#fff">
+				<view class="cell">
+					<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.headshot}}" mode="cover"></image>
+					<text class="userinfo-nickname">{{userInfo.nickname}}</text>
+           <view class = "button">
+          <van-button round custom-style="padding:0rpx;width:0" size="small" type="primary">接受</van-button>
+          </view>
+				</view>
+				<view style="width:90%;height:1px;background-color: #eee;margin-left:5%"></view>
+			</view>
+		
+		</view>
+
+		<view>
+			<van-index-anchor index="最近联系人"></van-index-anchor>
+			<view style="background-color:#fff">
+				<view class="cell">
+					<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.headshot}}" mode="cover"></image>
+					<text class="userinfo-nickname">{{userInfo.nickname}}</text>
+				</view>
+				<view style="width:90%;height:1px;background-color: #eee;margin-left:5%"></view>
+			</view>
+				<view style="background-color:#fff">
+				<view class="cell">
+					<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.headshot}}" mode="cover"></image>
+					<text class="userinfo-nickname">{{userInfo.nickname}}</text>
+				</view>
+				<view style="width:90%;height:1px;background-color: #eee;margin-left:5%"></view>
+			</view>
+		</view>
+		<view>
+			<van-index-anchor index="三个月前添加"></van-index-anchor>
+			<view style="background-color:#fff">
+				<view class="cell">
+					<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.headshot}}" mode="cover"></image>
+					<text class="userinfo-nickname">{{userInfo.nickname}}</text>
+				</view>
+				<view style="width:90%;height:1px;background-color: #eee;margin-left:5%"></view>
+			</view>
+				<view style="background-color:#fff">
+				<view class="cell">
+					<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.headshot}}" mode="cover"></image>
+					<text class="userinfo-nickname">{{userInfo.nickname}}</text>
+				</view>
+				<view style="width:90%;height:1px;background-color: #eee;margin-left:5%"></view>
+			</view>
+		
+		</view>
+
+	</scroll-view>
+</view>

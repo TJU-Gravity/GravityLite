@@ -41,6 +41,11 @@ Page({
       url: '../post/editor/editor'
     })
   },
+  goToContacts: function() {
+    wx.navigateTo({
+      url: '../contacts/contacts'
+    })
+  },
   
   onLoad: function () {
     if (app.globalData.userInfo) {

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-index-bar": "../vant-weapp/dist/index-bar/index",
+    "van-index-anchor": "../vant-weapp/dist/index-anchor/index"
+  }
+}

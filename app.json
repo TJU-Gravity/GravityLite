@@ -1,14 +1,13 @@
 {
   "pages": [
-
     "pages/index/index",
     "pages/post/editor/editor",
     "pages/post/detail/postDetail",
     "pages/logs/logs",
     "pages/me/me",
     "pages/post/postList",
-    "pages/me/editor/editor"
-
+    "pages/me/editor/editor",
+    "pages/contacts/contacts"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -28,6 +27,7 @@
     "van-field": "./vant-weapp/dist/field/index",
     "van-button": "./vant-weapp/dist/button/index",
     "van-panel": "./vant-weapp/dist/panel/index",
-    "van-divider": "./vant-weapp/dist/divider/index"
+    "van-divider": "./vant-weapp/dist/divider/index",
+    "van-popup": "./vant-weapp/dist/popup/index"
   }
 }

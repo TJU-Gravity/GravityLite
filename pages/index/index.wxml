@@ -14,6 +14,7 @@
       <text class="user-motto" bindtap="goToPostList">帖子列表\n</text>
        <text class="user-motto" bindtap="goToPostDetail">帖子详情\n</text>
         <text class="user-motto" bindtap="goToPostEditor">发表帖子\n</text>
+        <text class="user-motto" bindtap="goToContacts">名片夹\n</text>
        
   </view>
 </view>

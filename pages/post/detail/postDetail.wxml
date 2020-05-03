@@ -66,4 +66,16 @@
 
 	</van-panel>
 
+<van-button custom-style="position:fixed;bottom:0rpx;width:100%" bind:click="clickReply">回复</van-button>
+<van-popup
+  show="{{ show }}"
+  round
+  position="bottom"
+  custom-style="height: 30%"
+  bind:close="onClose"
+>
+	<textarea bindblur="bindTextAreaBlur" auto-height placeholder="请输入内容" style="margin:20rpx" />
+		<van-button type="primary"  custom-style="width:100%;position:fixed;bottom:0rpx;panding:0rpx" icon="success">确定</van-button>
+
+</van-popup>
 </view>
