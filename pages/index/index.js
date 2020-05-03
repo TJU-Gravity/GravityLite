@@ -46,7 +46,11 @@ Page({
       url: '../contacts/contacts'
     })
   },
-  
+  goToVisitingCard: function() {
+    wx.navigateTo({
+      url: '../contacts/visitingCard/visitingCard'
+    })
+  },
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({

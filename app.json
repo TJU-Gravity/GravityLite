@@ -7,7 +7,8 @@
     "pages/me/me",
     "pages/post/postList",
     "pages/me/editor/editor",
-    "pages/contacts/contacts"
+    "pages/contacts/contacts",
+    "pages/contacts/visitingCard/visitingCard"
   ],
   "window": {
     "backgroundTextStyle": "light",
