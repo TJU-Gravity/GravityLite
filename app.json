@@ -8,7 +8,8 @@
     "pages/post/postList",
     "pages/me/editor/editor",
     "pages/contacts/contacts",
-    "pages/contacts/visitingCard/visitingCard"
+    "pages/contacts/visitingCard/visitingCard",
+    "pages/post/myList/myList"
   ],
   "window": {
     "backgroundTextStyle": "light",

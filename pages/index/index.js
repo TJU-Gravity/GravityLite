@@ -51,6 +51,11 @@ Page({
       url: '../contacts/visitingCard/visitingCard'
     })
   },
+  goToMyList: function() {
+    wx.navigateTo({
+      url: '../post/myList/myList'
+    })
+  },
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({

@@ -16,5 +16,6 @@
         <text class="user-motto" bindtap="goToPostEditor">发表帖子\n</text>
         <text class="user-motto" bindtap="goToContacts">名片夹\n</text>
        <text class="user-motto" bindtap="goToVisitingCard">他人名片\n</text>
+       <text class="user-motto" bindtap="goToMyList">我发表的帖子\n</text>
   </view>
 </view>
