@@ -9,10 +9,16 @@
 				<van-row><text class="hidden">	_	</text></van-row>
 				<van-row>
 					<text class="userinfo-nickname">{{userInfo.nickname}}</text>
+					
+					
 				</van-row>
 				<van-row>
 					<text class="userinfo-description">{{userInfo.description}}</text>
 				</van-row>
+			</van-col>
+				<van-col span="4" >
+					<van-row><text class="hidden">	_	</text></van-row>
+		<van-icon name = "edit" size = "60rpx" bindtap="goToEditor"/>
 			</van-col>
 		</van-row>
 		<div class="tab-box">
@@ -25,35 +31,35 @@
 		</div>
     <van-row>
 			<van-col span="22" offset="2">
-      <van-icon name="chat" style="margin:10rpx"/>
-				<text class="userinfo-description">school:{{userInfo.school}} major:{{userInfo.major}} grade:{{userInfo.grade}}</text>
+      <van-icon name="medal" style="margin:10rpx"/>
+				<text class="userinfo-description">{{userInfo.school?userInfo.school:'学校未知'}}  {{userInfo.major?userInfo.major:'专业未知'}}  {{userInfo.grade?userInfo.grade:'年级未知'}}</text>
 			</van-col>
       	</van-row>
 		<van-row>
 			<van-col span="10" offset="2">
       <van-icon name="chat" style="margin:10rpx"/>
-				<text class="userinfo-description">{{userInfo.wechat}}</text>
+				<text class="userinfo-description">{{userInfo.wechat?userInfo.wechat:'未填写'}}</text>
 			</van-col>
 			<van-col span="11" offset="1">
         <van-icon name="chat" style="margin:10rpx"/>
-				<text class="userinfo-description">{{userInfo.qq}}</text>
+				<text class="userinfo-description">{{userInfo.qq?userInfo.qq:'未填写'}}</text>
 			</van-col>
 		</van-row>
 		<van-row>
 			<van-col span="10" offset="2">
         <van-icon name="chat" style="margin:10rpx"/>
-				<text class="userinfo-description">{{userInfo.phonenumber}}</text>
+				<text class="userinfo-description">{{userInfo.phonenumber?userInfo.phonenumber:'未填写'}}</text>
 			</van-col>
 			<van-col span="11" offset="1">
         <van-icon name="chat" style="margin:10rpx"/>
-				<text class="userinfo-description">{{userInfo.email}}</text>
+				<text class="userinfo-description">{{userInfo.email?userInfo.email:'未填写'}}</text>
 			</van-col>
 		</van-row>
 		<view style="padding:20rpx"></view>
 	</view>
 
 	<view class="card-box">
-		<van-cell is-link>
+		<van-cell is-link bindtap="goToContacts">
 			<view slot="title">
 				<view class="van-cell-text">我的名片夹</view>
 			</view>
@@ -61,7 +67,7 @@
 	</view>
 
 	<view class="card-box">
-		<van-cell is-link>
+		<van-cell is-link bindtap="goToMyList">
 			<view slot="title">
 				<view class="van-cell-text">我发表的帖子</view>
 			</view>

@@ -66,5 +66,22 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+
+  goToContacts: function() {
+    wx.navigateTo({
+      url: '../contacts/contacts'
+    })
+  },  
+  goToMyList: function() {
+    wx.navigateTo({
+      url: '../post/myList/myList'
+    })
+  },
+  goToEditor: function() {
+    wx.navigateTo({
+      url: '../me/editor/editor'
+    })
+  },
 })

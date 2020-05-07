@@ -3,18 +3,15 @@
 	
 		<van-field value="{{ value }}" placeholder="请输入标题" border="{{ false }}" bind:change="onChange" />
 		<van-field value="{{ value }}" placeholder="请输入标签" border="{{ false }}" bind:change="onChangeTag" />
-		<div class="tab-box">
-			<div class="tab">
-				<van-tag round plain type="success" size="large">标签
+		<view class="tab-box"wx:for="{{currentTagList}}" wx:key="id" >
+			<view class="tab">
+				<van-tag round plain type="success" size="large" >{{item.tag}}
 					<view style="padding:5rpx" />
-					<van-icon name="cross" />
+					<van-icon name="cross" bindtap="removeTag" data-id='{{index}}'/>
 				</van-tag>
-			</div>
-			<div class="tab">
-				<van-tag round plain type="success" size="large">标签 <view style="padding:5rpx" />
-					<van-icon name="cross" /></van-tag>
-			</div>
-		</div>
+				</view>
+			</view>
+		
 		<scroll-view scroll-y="true" class="scrollview" hidden="{{hideList}}" style="{{tagList.length>5?'height:180rpx':''}};margin-left:20rpx">
 			<view wx:for="{{tagList}}" wx:key="id">
 				<view bindtap="itemtap" class="itemview">{{item.tag}}</view>
@@ -24,6 +21,6 @@
 			<textarea bindblur="bindTextAreaBlur" auto-height placeholder="请输入内容" style="margin:20rpx" />
 			</view>
 
-<van-button type="primary" custom-style="width:100%;position:fixed;bottom:0rpx;panding:0rpx" icon="success">发布</van-button>
+<van-button type="primary" custom-style="width:100%;position:fixed;bottom:0rpx;panding:0rpx" icon="success" bindtap="submit">发布</van-button>
 
 </view>

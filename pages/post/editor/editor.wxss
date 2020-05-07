@@ -1,7 +1,8 @@
 /* pages/post/editor/editor.wxss */
 .tab-box{
-  margin-left:50rpx;
-  margin-right: 50rpx;
-  margin-top: 20rpx;
-  margin-bottom: 20rpx;
+  display: inline-block;
+}
+.tab{
+  padding:5rpx;
+  display:inline-block;
 }

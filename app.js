@@ -1,5 +1,19 @@
 //app.js
+
 App({
+  loadUserInfo: function (page) {
+    page.setData({
+      userInfo: this.globalData.userInfo,
+      hasUserInfo: true
+    })
+    this.userInfoReadyCallback = res => {
+      page.setData({
+        userInfo: res.userInfo,
+        hasUserInfo: true
+      })
+    }
+  },
+  util: require('./utils/util.js'),
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -60,6 +74,7 @@ App({
       }
     })
   },
+  
   globalData: {
     tempUserInfo:null,
     userInfo: null,

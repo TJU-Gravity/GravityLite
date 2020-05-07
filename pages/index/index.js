@@ -45,17 +45,18 @@ Page({
     wx.navigateTo({
       url: '../contacts/contacts'
     })
+  },  
+  goToMyList: function() {
+    wx.navigateTo({
+      url: '../post/myList/myList'
+    })
   },
   goToVisitingCard: function() {
     wx.navigateTo({
       url: '../contacts/visitingCard/visitingCard'
     })
   },
-  goToMyList: function() {
-    wx.navigateTo({
-      url: '../post/myList/myList'
-    })
-  },
+
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
