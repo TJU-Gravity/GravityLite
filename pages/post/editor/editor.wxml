@@ -1,9 +1,9 @@
 <!--pages/post/editor/editor.wxml-->
 <view>
 	
-		<van-field value="{{ value }}" placeholder="请输入标题" border="{{ false }}" bind:change="onChange" />
+		<van-field value="{{ value }}" placeholder="请输入标题" border="{{ false }}" bind:change="onChangeTitle" />
 		<van-field value="{{ value }}" placeholder="请输入标签" border="{{ false }}" bind:change="onChangeTag" />
-		<view class="tab-box"wx:for="{{currentTagList}}" wx:key="id" >
+		<view class="tab-box" wx:for="{{currentTagList}}" wx:key="id" >
 			<view class="tab">
 				<van-tag round plain type="success" size="large" >{{item.tag}}
 					<view style="padding:5rpx" />
@@ -18,7 +18,7 @@
 			</view>
 		</scroll-view>
 		<view class="section">
-			<textarea bindblur="bindTextAreaBlur" auto-height placeholder="请输入内容" style="margin:20rpx" />
+			<textarea bindinput='onChangeBody' auto-height placeholder="请输入内容" style="margin:20rpx" />
 			</view>
 
 <van-button type="primary" custom-style="width:100%;position:fixed;bottom:0rpx;panding:0rpx" icon="success" bindtap="submit">发布</van-button>

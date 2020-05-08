@@ -141,12 +141,16 @@ Page({
   title: '',
   body: '',
 
+  bindFormSubmit: function(e) {
+    console.log(e.detail.value)
+  },
+
   onChangeTitle: function (options) {
     this.title = options.detail
   },
 
   onChangeBody: function (options) {
-    this.body = options.detail
+    this.body = options.detail.value
   },
 
   onChangeTag: function (options) {
@@ -182,7 +186,7 @@ Page({
   submit: function () {
     var tagList = this.getTagList()
     var currentTime = app.util.formatTime(new Date())
-    console.log(currentTime)
+    console.log(this.body)
     wx.request({
       url: app.globalData.host + '/post/add',
       method: "POST",

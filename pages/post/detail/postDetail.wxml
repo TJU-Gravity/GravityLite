@@ -2,70 +2,55 @@
 <view class='background'>
 	<van-panel use-footer-slot>
 		<view slot="header" style="padding-top:15rpx">
-			<text class="post-title">帖子标题</text>
+			<text class="post-title">{{post.title}}</text>
 			<van-divider />
 		</view>
 
 		<view>
 			<van-row>
 				<van-col span="2" offset="1">
-					<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.headshot}}" mode="cover"></image>
+					<image bindtap="bindViewTap" class="userinfo-avatar" src="{{poster.headshot}}" mode="cover"></image>
 				</van-col>
 				<van-col span="21">
-					<text class="userinfo-nickname">{{userInfo.nickname}}</text>
+					<text class="userinfo-nickname">{{poster.nickname}}</text>
 					<van-row>
-
-						<text class="userinfo-description" style="margin-left:10rpx">2020/4/24</text>
-
+						<text class="userinfo-description" style="margin-left:10rpx">{{post.postingtime}}</text>
 					</van-row>
 				</van-col>
-
-
-
 				<van-col span="20" offset="3">
-					<text class='post-detail'>帖子内容测试 帖子内容测试 帖子内容测试 帖子内容测试 帖子内容测试 帖子内容测试  帖子内容测试 帖子内容测试 帖子内容测试 帖子内容测试</text>
+					<text class='post-detail'>{{post.postbody}}</text>
 				</van-col>
 			</van-row>
 		</view>
-		<view slot="footer">
-			<div style="margin-right:10rpx">
-				<van-tag round plain type="success">#标签</van-tag>
-			</div>
-			<div style="margin-right:10rpx">
-				<van-tag round plain type="success">#标签</van-tag>
-			</div>
+		<view slot="footer" wx:for="{{tags}}" wx:key="id">
 			<div style="margin-right:10rpx">
 				<van-tag round plain type="success">#标签</van-tag>
 			</div>
 		</view>
 	</van-panel>
 	<view style="padding:5rpx"></view>
+	<view wx:for="{{replies}}" wx:key="replyid" >
 	<van-panel>
 
-		<view style="padding-top:25rpx;padding-bottom:20rpx">
+		<view style="padding-top:25rpx;padding-bottom:20rpx" >
 			<van-row>
 				<van-col span="2" offset="1">
-					<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.headshot}}" mode="cover"></image>
+					<image bindtap="bindViewTap" class="userinfo-avatar" src="{{item.headshot}}" mode="cover"></image>
 				</van-col>
 				<van-col span="21">
-					<text class="userinfo-nickname">{{userInfo.nickname}}</text>
+					<text class="userinfo-nickname">{{item.nickname}}</text>
 					<van-row>
-
-						<text class="userinfo-description" style="margin-left:10rpx">2020/4/24</text>
-
+						<text class="userinfo-description" style="margin-left:10rpx">{{item.postingtime}}</text>
 					</van-row>
 				</van-col>
-
-
-
 				<van-col span="20" offset="3">
-					<text class='reply'>回复 回复 回复 回复</text>
+					<text class='reply'>{{item.replybody}}</text>
 				</van-col>
 			</van-row>
 		</view>
 
 	</van-panel>
-
+</view>
 <van-button custom-style="position:fixed;bottom:0rpx;width:100%" bind:click="clickReply">回复</van-button>
 <van-popup
   show="{{ show }}"
@@ -74,8 +59,8 @@
   custom-style="height: 30%"
   bind:close="onClose"
 >
-	<textarea bindblur="bindTextAreaBlur" auto-height placeholder="请输入内容" style="margin:20rpx" />
-		<van-button type="primary"  custom-style="width:100%;position:fixed;bottom:0rpx;panding:0rpx" icon="success">确定</van-button>
+	<textarea value="{{replyBody}}" bindinput="onChangeReply" auto-height placeholder="请输入内容" style="margin:20rpx" />
+		<van-button type="primary"  custom-style="width:100%;position:fixed;bottom:0rpx;panding:0rpx" icon="success" bindtap="submitReply">确定</van-button>
 
 </van-popup>
 </view>

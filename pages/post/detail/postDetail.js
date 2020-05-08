@@ -6,9 +6,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    replyBody:''
   },
+ 
 
+  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -23,6 +25,38 @@ Page({
         hasUserInfo: true
       })
     }
+    if(options&&options.id){
+      this.getPostDetail(options.id)
+      this.id = options.id
+    } else if(this.id){
+      this.getPostDetail(this.id)
+    }
+  },
+   getPostDetail:function(id){
+     var page = this
+    wx.request({
+      url: app.globalData.host + '/post/detail',
+      method: "POST",
+      data: {
+        ID:id
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res.data)
+        if (res.data.code == 200) {
+          page.setData({
+            post : res.data.data.post,
+            poster : res.data.data.user,
+            replies : res.data.data.replies
+          })
+        }
+      },
+      fail: function (res) {
+        console.log(res.data)
+      }
+    })
   },
 
   /**
@@ -81,6 +115,43 @@ Page({
   onClose: function(){
     this.setData({
       show:false
+    })
+  },
+
+ 
+  onChangeReply:function(options){
+    console.log(options)
+    this.setData({
+      replyBody:options.detail.value
+    })
+  },
+
+  submitReply:function(options){
+    var page = this
+    wx.request({
+      url: app.globalData.host + '/reply/add',
+      method: "POST",
+      data: {
+        postid:this.data.post.postid,
+        posterid:this.data.userInfo.username,
+        postingtime:app.util.formatTime(new Date()),
+        replybody:this.data.replyBody
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res.data)
+        if (res.data.code == 200) {
+          page.setData({
+            replyBody:''
+          })
+          page.onLoad()
+        }
+      },
+      fail: function (res) {
+        console.log(res.data)
+      }
     })
   }
 })

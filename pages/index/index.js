@@ -33,7 +33,7 @@ Page({
   
   goToPostDetail: function() {
     wx.navigateTo({
-      url: '../post/detail/postDetail'
+      url: '../post/detail/postDetail?id=4'
     })
   },
   goToPostEditor: function() {
